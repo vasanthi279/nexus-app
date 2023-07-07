@@ -1,0 +1,19 @@
+kind: # https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sparkjava-ingress
+  namespace: sparkjava
+spec:
+  rules:
+  - host: sparkjava.maheswargoud.xyz
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: sparkjava-svc
+            port:
+              number: 80

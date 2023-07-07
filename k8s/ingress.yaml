@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sparkjava-ingress
+  namespace: sparkjava
+spec:
+  rules:
+  - host: sparkjava.maheswargoud.xyz
+    http:
+      paths:
+      - path: /sparkjava-hello-world-1.0
+        pathType: Prefix
+        backend:
+          service:
+            name: sparkjava-svc
+            port:
+              number: 80

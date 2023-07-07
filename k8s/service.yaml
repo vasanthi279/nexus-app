@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  sparkjava-svc
+  namespace: sparkjava
+spec:
+  selector:
+    app:  sparkjava
+  type:  ClusterIP 
+  ports:
+  - name:  sparkjava
+    port:  80
+    targetPort:  8080
